@@ -203,6 +203,7 @@
       gap: 14px;
       padding: 10px 0;
       position: relative;
+      cursor: pointer;
     }
     .sched-item::before {
       content: '';
@@ -226,9 +227,17 @@
       z-index: 1;
     }
     .sched-item.highlight .sched-dot { border-color: var(--orange); background: var(--orange); }
-    .sched-body { flex: 1; }
+    .sched-body {
+      flex: 1;
+      padding: 2px 8px;
+      margin: -2px -8px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .sched-item:hover .sched-body { background: var(--gray-light); }
+    .sched-item:hover .sched-text { color: var(--orange); }
     .sched-text { font-size: 14px; color: var(--black); line-height: 1.5; }
-    .sched-sub { font-size: 12px; color: var(--gray-mid); margin-top: 2px; }
+    .sched-sub { font-size: 12px; color: var(--gray-dark); margin-top: 2px; }
     .transport {
       display: inline-block;
       font-size: 10px;
@@ -240,6 +249,15 @@
     .t-pasmo { background: rgba(59,130,246,0.1); color: #3b82f6; border: 1px solid rgba(59,130,246,0.25); }
     .t-pass { background: var(--orange-light); color: var(--orange); border: 1px solid var(--orange-border); }
     .t-taxi { background: rgba(234,179,8,0.1); color: #b45309; border: 1px solid rgba(234,179,8,0.3); }
+    .map-pin {
+      display: inline-block;
+      font-size: 10px;
+      opacity: 0.35;
+      margin-left: 5px;
+      transition: opacity 0.15s;
+      vertical-align: middle;
+    }
+    .sched-item:hover .map-pin { opacity: 1; }
 
     /* TIP */
     .tip {
@@ -384,32 +402,60 @@
     </button>
     <div class="day-body">
       <div class="schedule">
-        <div class="sched-item highlight">
+        <div class="sched-item highlight" onclick="openMap(event, '신치토세공항')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text"><span class="transport t-pasmo">파스모</span>신치토세공항 → 삿포로역 · JR 쾌속 에어포트</div>
+            <div class="sched-text"><span class="transport t-pasmo">파스모</span>신치토세공항 → 삿포로역 · JR 쾌속 에어포트<span class="map-pin">📍</span></div>
             <div class="sched-sub">약 40분 · 파스모 태그 탑승</div>
           </div>
         </div>
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, 'JR Mets Premier Hotel Sapporo')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">JR Mets Premier 체크인 + 침대 가드 확인</div>
+            <div class="sched-text">JR Mets Premier 체크인 + 침대 가드 확인<span class="map-pin">📍</span></div>
             <div class="sched-sub">디럭스 트윈 · 삿포로역 도보 1분</div>
           </div>
         </div>
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, '삿포로 스텔라 플레이스')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">오도리 공원 + 삿포로 TV타워 산책</div>
-            <div class="sched-sub">지하철 또는 도보 · 유모차 이동 편함</div>
+            <div class="sched-text">쇼핑 — 차해옷 (마키즈, 5층)<span class="map-pin">📍</span></div>
+            <div class="sched-sub">삿포로 스텔라 플레이스 · 삿포로역/호텔 직결 도보 1~2분</div>
           </div>
         </div>
-        <div class="sched-item highlight">
+        <div class="sched-item" onclick="openMap(event, '삿포로 팩토리')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">저녁 — 스스키노 미소라멘</div>
-            <div class="sched-sub">삿포로 명물 첫 경험</div>
+            <div class="sched-text">쇼핑 — 차해옷 몽벨 옵션① <span class="map-pin">📍</span></div>
+            <div class="sched-sub">삿포로 팩토리 · 삿포로역에서 도보 약 15분 (약 1.1km)</div>
+          </div>
+        </div>
+        <div class="sched-item" onclick="openMap(event, '몽벨 삿포로 아카렌가 테라스')">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">쇼핑 — 차해옷 몽벨 옵션② <span class="map-pin">📍</span></div>
+            <div class="sched-sub">몽벨 삿포로 아카렌가 테라스 · 삿포로역에서 도보 약 5분 (약 400m)</div>
+          </div>
+        </div>
+        <div class="sched-item" onclick="openMap(event, '삿포로 오도리공원')">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">오도리 공원 + 삿포로 TV타워 산책<span class="map-pin">📍</span></div>
+            <div class="sched-sub">지하철 또는 도보 · 유모차 이동 편함 · 삿포로역에서 도보 약 10분</div>
+          </div>
+        </div>
+        <div class="sched-item highlight" onclick="openMap(event, '삿포로 라멘 요코초')">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">저녁 — 스스키노 미소라멘<span class="map-pin">📍</span></div>
+            <div class="sched-sub">원조 삿포로 라멘 요코초 · 17개 노포 미소라멘집 골목 · 삿포로 명물 첫 경험 · 오도리공원에서 도보 약 10분</div>
+          </div>
+        </div>
+        <div class="sched-item highlight" onclick="openMap(event, '카니혼케 삿포로에키마에')">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">저녁 옵션 — 카니혼케 삿포로에키마에 🦀<span class="map-pin">📍</span></div>
+            <div class="sched-sub">털게·대게 가이세키 전문점 · 삿포로역 도보권 · 사전 예약 권장 · 오도리공원에서 도보 약 10분</div>
           </div>
         </div>
       </div>
@@ -429,38 +475,39 @@
     </button>
     <div class="day-body">
       <div class="schedule">
-        <div class="sched-item highlight">
+        <div class="sched-item highlight" onclick="openMap(event, '시로이 코이비토 파크')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">오전 — 시로이코이비토 파크</div>
-            <div class="sched-sub"><span class="transport t-pasmo">파스모</span>JR 미야노사와역 하차 · 사전 예약 필수</div>
+            <div class="sched-text">오전 — 시로이코이비토 파크<span class="map-pin">📍</span></div>
+            <div class="sched-sub"><span class="transport t-pasmo">파스모</span>JR 미야노사와역 하차 · 사전 예약 필수 · 미야노사와역에서 도보 약 7분</div>
           </div>
         </div>
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, 'JR 후라노역')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text"><span class="transport t-pass">에리어패스</span>삿포로역 → 후라노역 (에리어패스 개시)</div>
+            <div class="sched-text"><span class="transport t-pass">에리어패스</span>삿포로역 → 후라노역 (에리어패스 개시)<span class="map-pin">📍</span></div>
             <div class="sched-sub">특급 라일락 + 후라노선 환승 · 약 2시간</div>
           </div>
         </div>
-        <div class="sched-item highlight">
+        <div class="sched-item highlight" onclick="openMap(event, '팜 도미타')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">팜 도미타 — 라벤더 밭 🌸</div>
+            <div class="sched-text">팜 도미타 — 라벤더 밭 🌸<span class="map-pin">📍</span></div>
             <div class="sched-sub"><span class="transport t-taxi">택시</span>후라노역에서 약 15분 · 7월 만개 시즌 · 입장 무료</div>
           </div>
         </div>
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, 'La Vista Furano Hills')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">La Vista Furano Hills 체크인 + 온천</div>
-            <div class="sched-sub">침대 가드 확인 · 모더레이트 퀸룸</div>
+            <div class="sched-text">La Vista Furano Hills 체크인 + 온천<span class="map-pin">📍</span></div>
+            <div class="sched-sub">침대 가드 확인 · 모더레이트 퀸룸 · 도보 비권장(택시/셔틀 이동)</div>
           </div>
         </div>
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, '후라노 시내')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">저녁 — 후라노 오믈렛 or 와인 레스토랑</div>
+            <div class="sched-text">저녁 — 후라노 오믈렛 or 와인 레스토랑<span class="map-pin">📍</span></div>
+            <div class="sched-sub">호텔 인근 · 도보 가능권</div>
           </div>
         </div>
       </div>
@@ -481,31 +528,38 @@
     </button>
     <div class="day-body">
       <div class="schedule">
-        <div class="sched-item highlight">
+        <div class="sched-item highlight" onclick="openMap(event, '후라노 치즈공방')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">오전 — 후라노 치즈공방 + 버터 만들기 체험</div>
+            <div class="sched-text">오전 — 후라노 치즈공방 + 버터 만들기 체험<span class="map-pin">📍</span></div>
             <div class="sched-sub"><span class="transport t-taxi">택시</span>후라노역에서 약 10분 · 아기 동반 추천</div>
           </div>
         </div>
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, '닝구르 테라스')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">닝구르 테라스 산책</div>
-            <div class="sched-sub">숲속 공예 공방 거리 · 체크아웃 후 짐 맡기고</div>
+            <div class="sched-text">닝구르 테라스 산책<span class="map-pin">📍</span></div>
+            <div class="sched-sub">숲속 공예 공방 거리 · 체크아웃 후 짐 맡기고 · 치즈공방에서 차로 약 10분(도보 비권장)</div>
           </div>
         </div>
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, 'JR 삿포로역')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text"><span class="transport t-pass">에리어패스</span>후라노역 → 삿포로역 귀환</div>
+            <div class="sched-text"><span class="transport t-pass">에리어패스</span>후라노역 → 삿포로역 귀환<span class="map-pin">📍</span></div>
           </div>
         </div>
-        <div class="sched-item highlight">
+        <div class="sched-item" onclick="openMap(event, '아리오 삿포로')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">저녁 — 홋카이도 징기스칸 🍖</div>
-            <div class="sched-sub">삿포로 대표 음식 · 스스키노 근처</div>
+            <div class="sched-text">쇼핑 — 차해옷 (브리즈, 아가짱혼포 2층)<span class="map-pin">📍</span></div>
+            <div class="sched-sub">아리오 삿포로 · 삿포로역에서 도보 불가(약 4km↑) · JR로 나에보역 이동 후 도보 3분</div>
+          </div>
+        </div>
+        <div class="sched-item highlight" onclick="openMap(event, '삿포로 스스키노')">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">저녁 — 홋카이도 징기스칸 🍖<span class="map-pin">📍</span></div>
+            <div class="sched-sub">삿포로 대표 음식 · 스스키노 근처 · 삿포로역에서 도보 약 15~20분(또는 지하철 2정거장)</div>
           </div>
         </div>
       </div>
@@ -525,45 +579,46 @@
     </button>
     <div class="day-body">
       <div class="schedule">
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, 'JR 오타루역')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text"><span class="transport t-pass">에리어패스</span>삿포로역 → 오타루역</div>
+            <div class="sched-text"><span class="transport t-pass">에리어패스</span>삿포로역 → 오타루역<span class="map-pin">📍</span></div>
             <div class="sched-sub">약 35분 · 오전 일찍 출발 추천</div>
           </div>
         </div>
-        <div class="sched-item highlight">
+        <div class="sched-item highlight" onclick="openMap(event, '오타루 운하')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">오타루 운하 산책</div>
-            <div class="sched-sub">평지 코스 · 유모차 이동 편함</div>
+            <div class="sched-text">오타루 운하 산책<span class="map-pin">📍</span></div>
+            <div class="sched-sub">평지 코스 · 유모차 이동 편함 · 오타루역에서 도보 약 10분</div>
           </div>
         </div>
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, '사카이마치 거리 오타루')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">사카이마치 거리 — 오르골 체험</div>
-            <div class="sched-sub">돌바닥 구간 일부 있음 · 유모차 주의</div>
+            <div class="sched-text">사카이마치 거리 — 오르골 체험<span class="map-pin">📍</span></div>
+            <div class="sched-sub">돌바닥 구간 일부 있음 · 유모차 주의 · 오타루운하에서 도보 약 5분</div>
           </div>
         </div>
-        <div class="sched-item highlight">
+        <div class="sched-item highlight" onclick="openMap(event, '오타루')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">점심 — 카이센동 🦀</div>
-            <div class="sched-sub">신선 해산물 덮밥</div>
+            <div class="sched-text">점심 — 카이센동 🦀<span class="map-pin">📍</span></div>
+            <div class="sched-sub">신선 해산물 덮밥 · 사카이마치 거리 도보권 내</div>
           </div>
         </div>
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, '삿포로역 JR타워 스텔라플레이스')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text"><span class="transport t-pass">에리어패스</span>오후 삿포로 귀환 + 기념품 쇼핑</div>
-            <div class="sched-sub">삿포로역 JR타워 스텔라플레이스</div>
+            <div class="sched-text"><span class="transport t-pass">에리어패스</span>오후 삿포로 귀환 + 기념품 쇼핑<span class="map-pin">📍</span></div>
+            <div class="sched-sub">삿포로역 JR타워 스텔라플레이스 · 역 직결, 도보 0~2분</div>
           </div>
         </div>
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, '삿포로 수프카레')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">저녁 — 삿포로 스프카레</div>
+            <div class="sched-text">저녁 — 삿포로 스프카레<span class="map-pin">📍</span></div>
+            <div class="sched-sub">삿포로역/스스키노 권역 · 도보 약 5~15분(매장별 상이)</div>
           </div>
         </div>
       </div>
@@ -582,17 +637,17 @@
     </button>
     <div class="day-body">
       <div class="schedule">
-        <div class="sched-item">
+        <div class="sched-item" onclick="openMap(event, '삿포로역')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text">오전 — 마지막 마트 / 편의점 쇼핑</div>
-            <div class="sched-sub">홋카이도 한정 과자 · 유제품 · 치즈</div>
+            <div class="sched-text">오전 — 마지막 마트 / 편의점 쇼핑<span class="map-pin">📍</span></div>
+            <div class="sched-sub">홋카이도 한정 과자 · 유제품 · 치즈 · 호텔/역 직결, 도보 1~2분</div>
           </div>
         </div>
-        <div class="sched-item highlight">
+        <div class="sched-item highlight" onclick="openMap(event, '신치토세공항')">
           <div class="sched-dot"></div>
           <div class="sched-body">
-            <div class="sched-text"><span class="transport t-pasmo">파스모</span>삿포로역 → 신치토세공항 · JR 쾌속 에어포트</div>
+            <div class="sched-text"><span class="transport t-pasmo">파스모</span>삿포로역 → 신치토세공항 · JR 쾌속 에어포트<span class="map-pin">📍</span></div>
             <div class="sched-sub">16:20 출발 기준 → 14:00 이전 공항 도착 권장</div>
           </div>
         </div>
@@ -650,6 +705,12 @@
     dayEl.classList.toggle('open', !isOpen);
     const num = dayEl.querySelector('.day-num');
     num.classList.toggle('active', !isOpen);
+  }
+
+  function openMap(event, location) {
+    event.stopPropagation();
+    const url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(location);
+    window.open(url, '_blank');
   }
 </script>
 </body>
