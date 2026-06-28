@@ -3,589 +3,654 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>후쿠오카 가족여행 3박 4일 일정</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <title>삿포로 가족여행 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-dark: #085041;
-      --green-mid: #0F6E56;
-      --green: #1D9E75;
-      --green-light: #E1F5EE;
-      --coral: #D85A30;
-      --coral-light: #FAECE7;
-      --coral-dark: #712B13;
-      --purple: #7F77DD;
-      --purple-light: #EEEDFE;
-      --purple-dark: #3C3489;
-      --amber: #BA7517;
-      --amber-light: #FAEEDA;
-      --amber-dark: #633806;
-      --gray-bg: #f7f6f3;
-      --gray-card: #ffffff;
-      --gray-border: #e8e6df;
-      --gray-text: #888780;
-      --text-primary: #2c2c2a;
-      --text-secondary: #5f5e5a;
-      --radius-md: 10px;
-      --radius-lg: 16px;
+      --orange: #FF6B2B;
+      --orange-light: rgba(255,107,43,0.08);
+      --orange-border: rgba(255,107,43,0.25);
+      --black: #111;
+      --gray-dark: #444;
+      --gray-mid: #888;
+      --gray-light: #f4f4f2;
+      --white: #fff;
+      --border: #e8e8e6;
+      --radius: 14px;
     }
 
     body {
       font-family: 'Noto Sans KR', sans-serif;
-      background: var(--gray-bg);
-      color: var(--text-primary);
+      background: var(--white);
+      color: var(--black);
       min-height: 100vh;
-      padding: 2rem 1rem 4rem;
     }
-
-    .container { max-width: 720px; margin: 0 auto; }
 
     /* HERO */
     .hero {
-      background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 55%, var(--green-dark) 100%);
-      color: white;
-      padding: 2.5rem 2rem 2rem;
-      border-radius: var(--radius-lg);
-      margin-bottom: 2rem;
+      background: var(--black);
+      color: var(--white);
+      padding: 64px 24px 52px;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
     .hero::before {
       content: '';
-      position: absolute; top: -40px; right: -40px;
-      width: 200px; height: 200px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.07);
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(255,107,43,0.22) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .hero::after {
-      content: '';
-      position: absolute; bottom: -25px; left: 50px;
-      width: 130px; height: 130px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-    }
-    .hero-label {
+    .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif;
       font-size: 11px;
-      letter-spacing: 3px;
-      opacity: 0.75;
-      margin-bottom: 8px;
-      position: relative;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
     }
     .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      line-height: 1.15;
-      margin-bottom: 6px;
-      position: relative;
+      font-size: clamp(36px, 8vw, 64px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 12px;
     }
-    .hero-sub { font-size: 14px; opacity: 0.82; position: relative; }
-    .hero-tags {
-      display: flex; gap: 8px; flex-wrap: wrap;
-      margin-top: 18px; position: relative;
+    .hero-title span { color: var(--orange); }
+    .hero-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+      margin-bottom: 32px;
     }
-    .tag {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.28);
-      border-radius: 20px;
-      padding: 5px 14px;
+    .hero-pills {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      padding: 6px 14px;
       font-size: 12px;
-      color: white;
+      color: rgba(255,255,255,0.75);
     }
+    .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+
+    /* FLIGHT BARS */
+    .flights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .flight-item {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .flight-item:first-child { border-right: 1px solid var(--border); }
+    .flight-dir {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+    .flight-route {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .flight-meta { font-size: 12px; color: var(--gray-mid); }
+
+    /* MAIN CONTENT */
+    .container { max-width: 680px; margin: 0 auto; padding: 0 20px 60px; }
 
     /* SECTION LABEL */
     .section-label {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--gray-text);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin: 0 0 12px 2px;
+      color: var(--gray-mid);
+      padding: 32px 0 12px;
     }
 
-    /* DAY CARDS */
-    .day-card {
-      background: var(--gray-card);
-      border: 1px solid var(--gray-border);
-      border-radius: var(--radius-lg);
-      margin-bottom: 12px;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    /* DAY ACCORDION */
+    .day {
+      border-bottom: 1px solid var(--border);
     }
-    .day-header {
-      padding: 16px 18px;
+    .day-toggle {
+      width: 100%;
       display: flex;
       align-items: center;
       gap: 14px;
+      padding: 18px 0;
+      background: none;
+      border: none;
       cursor: pointer;
-      user-select: none;
-      transition: background 0.15s;
+      text-align: left;
     }
-    .day-header:hover { background: #fafaf8; }
-
-    .day-dot {
-      width: 40px; height: 40px;
+    .day-toggle:hover .day-num { background: var(--orange); color: var(--white); }
+    .day-num {
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 14px;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-dark);
       flex-shrink: 0;
+      transition: background 0.2s, color 0.2s;
     }
-    .d1 .day-dot { background: var(--green-light); color: var(--green-dark); }
-    .d2 .day-dot { background: var(--coral-light); color: var(--coral-dark); }
-    .d3 .day-dot { background: var(--purple-light); color: var(--purple-dark); }
-    .d4 .day-dot { background: var(--amber-light); color: var(--amber-dark); }
-
+    .day-num.active { background: var(--orange); color: var(--white); border-color: var(--orange); }
     .day-info { flex: 1; }
-    .day-num { font-size: 11px; color: var(--gray-text); margin-bottom: 2px; letter-spacing: 1px; }
-    .day-title { font-size: 16px; font-weight: 700; color: var(--text-primary); }
-    .day-date { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
-
-    .chevron {
-      width: 20px; height: 20px;
-      color: var(--gray-text);
-      transition: transform 0.25s ease;
+    .day-date {
+      font-size: 11px;
+      color: var(--gray-mid);
+      margin-bottom: 2px;
+    }
+    .day-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--black);
+    }
+    .day-hotel {
+      font-size: 11px;
+      color: var(--orange);
+      background: var(--orange-light);
+      border: 1px solid var(--orange-border);
+      border-radius: 100px;
+      padding: 2px 10px;
+      white-space: nowrap;
       flex-shrink: 0;
     }
-    .day-card.open .chevron { transform: rotate(180deg); }
+    .day-chevron {
+      font-size: 18px;
+      color: var(--gray-mid);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .day.open .day-chevron { transform: rotate(180deg); }
 
     .day-body {
       display: none;
-      border-top: 1px solid var(--gray-border);
-      padding: 8px 0 12px;
+      padding-bottom: 20px;
     }
-    .day-card.open .day-body { display: block; }
+    .day.open .day-body { display: block; }
 
-    /* TIMELINE */
-    .tl-row {
-      display: grid;
-      grid-template-columns: 86px 20px 1fr;
-      gap: 0 10px;
-      align-items: start;
-      padding: 0 18px;
-      min-height: 48px;
-    }
-    .tl-time {
-      font-size: 11px;
-      color: var(--gray-text);
-      padding-top: 11px;
-      text-align: right;
-      line-height: 1.4;
-    }
-    .tl-line-col {
-      display: flex; flex-direction: column; align-items: center;
-      padding-top: 12px;
-    }
-    .tl-dot {
-      width: 9px; height: 9px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .tl-line { flex: 1; width: 1px; background: var(--gray-border); min-height: 30px; }
-
-    .d1 .tl-dot { background: var(--green); }
-    .d2 .tl-dot { background: var(--coral); }
-    .d3 .tl-dot { background: var(--purple); }
-    .d4 .tl-dot { background: var(--amber); }
-
-    .tl-content { padding: 8px 0 6px; }
-    .tl-text { font-size: 13.5px; color: var(--text-primary); line-height: 1.6; }
-    .tl-link {
-      display: inline-flex; align-items: center; gap: 4px;
-      font-size: 11.5px; color: var(--green);
-      text-decoration: none; margin-top: 4px;
-      opacity: 0.85;
-    }
-    .tl-link:hover { opacity: 1; text-decoration: underline; }
-    .tl-link svg { width: 12px; height: 12px; flex-shrink: 0; }
-
-    /* ALTERNATIVES */
-    .alt-box {
-      background: var(--gray-card);
-      border: 1px solid var(--gray-border);
-      border-radius: var(--radius-lg);
-      padding: 18px;
-      margin-bottom: 12px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
-    .alt-header { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
-    .alt-row {
-      display: flex; justify-content: space-between; align-items: flex-start;
+    /* SCHEDULE ITEMS */
+    .schedule { display: flex; flex-direction: column; gap: 0; }
+    .sched-item {
+      display: flex;
+      gap: 14px;
       padding: 10px 0;
-      border-top: 1px solid var(--gray-border);
+      position: relative;
     }
-    .alt-day { font-size: 12px; color: var(--gray-text); margin-bottom: 4px; }
-    .alt-place { font-size: 13.5px; color: var(--text-primary); font-weight: 500; }
-    .alt-desc { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
-    .alt-link {
-      font-size: 12px; color: var(--green);
-      text-decoration: none; white-space: nowrap;
-      margin-top: 2px;
+    .sched-item::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 26px;
+      bottom: -10px;
+      width: 1px;
+      background: var(--border);
     }
-    .alt-link:hover { text-decoration: underline; }
+    .sched-item:last-child::before { display: none; }
+    .sched-dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+      margin-top: 3px;
+      position: relative;
+      z-index: 1;
+    }
+    .sched-item.highlight .sched-dot { border-color: var(--orange); background: var(--orange); }
+    .sched-body { flex: 1; }
+    .sched-text { font-size: 14px; color: var(--black); line-height: 1.5; }
+    .sched-sub { font-size: 12px; color: var(--gray-mid); margin-top: 2px; }
+    .transport {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 1px 7px;
+      border-radius: 100px;
+      margin-right: 4px;
+    }
+    .t-pasmo { background: rgba(59,130,246,0.1); color: #3b82f6; border: 1px solid rgba(59,130,246,0.25); }
+    .t-pass { background: var(--orange-light); color: var(--orange); border: 1px solid var(--orange-border); }
+    .t-taxi { background: rgba(234,179,8,0.1); color: #b45309; border: 1px solid rgba(234,179,8,0.3); }
 
-    /* BUDGET */
-    .budget-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    /* TIP */
+    .tip {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: var(--gray-light);
+      border-left: 3px solid var(--orange);
+      border-radius: 0 8px 8px 0;
+      font-size: 12px;
+      color: var(--gray-dark);
+      line-height: 1.6;
+    }
+
+    /* SUMMARY BOX */
+    .summary {
+      margin-top: 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .summary-header {
+      padding: 14px 18px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 18px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      gap: 12px;
+    }
+    .summary-row:first-child { border-top: none; }
+    .s-label { color: var(--gray-mid); flex-shrink: 0; }
+    .s-val { color: var(--black); font-weight: 500; text-align: right; }
+    .s-badge {
+      font-size: 11px;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-radius: 100px;
+      padding: 2px 8px;
+      margin-left: 6px;
+    }
+    .s-badge.pending { background: #fff8e1; color: #e65100; }
+
+    /* TODO */
+    .todo {
+      margin-top: 24px;
+      border: 1px solid var(--orange-border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      background: var(--orange-light);
+    }
+    .todo-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .todo-item {
+      display: flex;
+      align-items: flex-start;
       gap: 10px;
-      margin-bottom: 10px;
+      font-size: 13px;
+      color: var(--black);
+      padding: 5px 0;
     }
-    .b-card {
-      background: var(--gray-card);
-      border: 1px solid var(--gray-border);
-      border-radius: var(--radius-md);
-      padding: 14px 16px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    .todo-check {
+      width: 16px; height: 16px;
+      border-radius: 4px;
+      border: 1.5px solid var(--orange);
+      flex-shrink: 0;
+      margin-top: 1px;
     }
-    .b-icon { font-size: 20px; margin-bottom: 8px; }
-    .b-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
-    .b-amount { font-size: 15px; font-weight: 700; color: var(--text-primary); }
-    .b-detail { font-size: 11.5px; color: var(--gray-text); margin-top: 3px; line-height: 1.4; }
-
-    .total-bar {
-      background: var(--green-dark);
-      color: white;
-      border-radius: var(--radius-lg);
-      padding: 20px 22px;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px;
-    }
-    .total-label { font-size: 13px; opacity: 0.85; margin-bottom: 2px; }
-    .total-note { font-size: 11px; opacity: 0.65; }
-    .total-amount { font-size: 22px; font-weight: 700; }
-    .total-krw { font-size: 12px; opacity: 0.75; margin-top: 3px; }
 
     /* FOOTER */
-    .footer {
+    footer {
       text-align: center;
-      font-size: 12px;
-      color: var(--gray-text);
-      margin-top: 2.5rem;
+      padding: 24px;
+      font-size: 11px;
+      color: var(--gray-mid);
+      border-top: 1px solid var(--border);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 500px) {
-      body { padding: 1rem 0.75rem 3rem; }
-      .hero { padding: 2rem 1.25rem 1.5rem; }
-      .hero-title { font-size: 26px; }
-      .tl-row { grid-template-columns: 70px 18px 1fr; }
-      .budget-grid { grid-template-columns: 1fr; }
-      .total-bar { flex-direction: column; align-items: flex-start; }
+    @media (max-width: 480px) {
+      .flights { grid-template-columns: 1fr; }
+      .flight-item:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+      .day-hotel { display: none; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- HERO -->
-    <div class="hero">
-      <div class="hero-label">FAMILY TRIP · 2025</div>
-      <div class="hero-title">후쿠오카<br>3박 4일 여행</div>
-      <div class="hero-sub">어른 3명 + 아기 3명 · 미노시마 숙소 기반</div>
-      <div class="hero-tags">
-        <span class="tag">6월 3일 ~ 6일</span>
-        <span class="tag">유모차 여행</span>
-        <span class="tag">아기 친화</span>
-        <span class="tag">택시 이동</span>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Family Trip 2026</div>
+  <h1 class="hero-title">삿포로<br><span>4박 5일</span></h1>
+  <p class="hero-sub">7월 5일 — 9일 · 부부 + 21개월</p>
+  <div class="hero-pills">
+    <div class="pill"><span class="pill-dot"></span>KE765 / KE770</div>
+    <div class="pill"><span class="pill-dot"></span>에리어 패스 + 파스모</div>
+    <div class="pill"><span class="pill-dot"></span>라벤더 시즌 🌸</div>
+  </div>
+</div>
+
+<!-- FLIGHTS -->
+<div class="flights">
+  <div class="flight-item">
+    <div class="flight-dir">출발</div>
+    <div class="flight-route">ICN → CTS</div>
+    <div class="flight-meta">KE765 · 7/5 (일) 10:05 → 12:50</div>
+  </div>
+  <div class="flight-item">
+    <div class="flight-dir">귀국</div>
+    <div class="flight-route">CTS → ICN</div>
+    <div class="flight-meta">KE770 · 7/9 (목) 16:20 → 19:30</div>
+  </div>
+</div>
+
+<!-- ITINERARY -->
+<div class="container">
+  <div class="section-label">일정</div>
+
+  <!-- Day 1 -->
+  <div class="day open" onclick="toggleDay(this)">
+    <button class="day-toggle" type="button">
+      <div class="day-num active">1</div>
+      <div class="day-info">
+        <div class="day-date">7월 5일 (일)</div>
+        <div class="day-title">도착 + 삿포로 시내</div>
       </div>
-    </div>
-
-    <!-- DAY CARDS -->
-    <div class="section-label">일별 일정</div>
-
-    <!-- DAY 1 -->
-    <div class="day-card d1 open" id="card1">
-      <div class="day-header" onclick="toggle('card1')" aria-expanded="true">
-        <div class="day-dot">1</div>
-        <div class="day-info">
-          <div class="day-num">DAY 1</div>
-          <div class="day-title">입국 및 하카타 적응</div>
-          <div class="day-date">6월 3일 수요일</div>
-        </div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="day-body">
-        <div class="tl-row">
-          <div class="tl-time">15:30<br>17:00</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">✈️ 인천공항 출발 → 후쿠오카 공항 (福岡空港) 도착</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=후쿠오카+공항" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+      <div class="day-hotel">JR Mets Premier · 조식 포함</div>
+      <div class="day-chevron">⌄</div>
+    </button>
+    <div class="day-body">
+      <div class="schedule">
+        <div class="sched-item highlight">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text"><span class="transport t-pasmo">파스모</span>신치토세공항 → 삿포로역 · JR 쾌속 에어포트</div>
+            <div class="sched-sub">약 40분 · 파스모 태그 탑승</div>
           </div>
         </div>
-        <div class="tl-row">
-          <div class="tl-time">17:00<br>17:40</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">🛃 입국 심사 및 수하물 수령 (유모차 정비)</div></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">17:40<br>18:40</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">🚖 공항 택시(2대) → 미노시마 숙소 (美野島) 이동<br>숙소 체크인, 짐 풀기 및 아기 정돈</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=미노시마+후쿠오카" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">JR Mets Premier 체크인 + 침대 가드 확인</div>
+            <div class="sched-sub">디럭스 트윈 · 삿포로역 도보 1분</div>
           </div>
         </div>
-        <div class="tl-row">
-          <div class="tl-time">18:40<br>20:30</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">🚖 숙소 → 하카타역 (博多駅) 택시 이동<br>🥩 야키니쿠 챔피언 JR하카타시티점 저녁</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=야키니쿠+챔피언+JR하카타시티" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">오도리 공원 + 삿포로 TV타워 산책</div>
+            <div class="sched-sub">지하철 또는 도보 · 유모차 이동 편함</div>
           </div>
         </div>
-        <div class="tl-row">
-          <div class="tl-time">20:30<br>21:50</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">🏬 하카타역 쇼핑몰 유모차 산책 및 밤 구경<br>🚖 하카타역 → 미노시마 숙소 택시 복귀</div></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">21:50<br>22:30</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">🛒 숙소 앞 써니 미노시마점 (サニー美野島店) 장보기</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=サニー+美野島店+福岡" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+        <div class="sched-item highlight">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">저녁 — 스스키노 미소라멘</div>
+            <div class="sched-sub">삿포로 명물 첫 경험</div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- DAY 2 -->
-    <div class="day-card d2" id="card2">
-      <div class="day-header" onclick="toggle('card2')" aria-expanded="false">
-        <div class="day-dot">2</div>
-        <div class="day-info">
-          <div class="day-num">DAY 2</div>
-          <div class="day-title">아기 감성 충전 & 나카스 산책</div>
-          <div class="day-date">6월 4일 목요일</div>
-        </div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  <!-- Day 2 -->
+  <div class="day" onclick="toggleDay(this)">
+    <button class="day-toggle" type="button">
+      <div class="day-num">2</div>
+      <div class="day-info">
+        <div class="day-date">7월 6일 (월)</div>
+        <div class="day-title">시로이코이비토 파크 → 후라노</div>
       </div>
-      <div class="day-body">
-        <div class="tl-row">
-          <div class="tl-time">09:00<br>09:30</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">🚖 숙소 → 호빵맨 박물관 택시 이동</div></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">09:30<br>12:00</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">🎈 후쿠오카 호빵맨 어린이 박물관 오픈런 관람</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=후쿠오카+호빵맨+박물관" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+      <div class="day-hotel">La Vista Furano Hills</div>
+      <div class="day-chevron">⌄</div>
+    </button>
+    <div class="day-body">
+      <div class="schedule">
+        <div class="sched-item highlight">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">오전 — 시로이코이비토 파크</div>
+            <div class="sched-sub"><span class="transport t-pasmo">파스모</span>JR 미야노사와역 하차 · 사전 예약 필수</div>
           </div>
         </div>
-        <div class="tl-row">
-          <div class="tl-time">12:00<br>13:30</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">🍙 박물관 내부 푸드코트 점심 (아기의자 완비)</div></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">13:30<br>14:00</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">💤 유모차 산책하며 캐널시티 하카타로 도보 이동</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=캐널시티+하카타" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text"><span class="transport t-pass">에리어패스</span>삿포로역 → 후라노역 (에리어패스 개시)</div>
+            <div class="sched-sub">특급 라일락 + 후라노선 환승 · 약 2시간</div>
           </div>
         </div>
-        <div class="tl-row">
-          <div class="tl-time">14:00<br>17:30</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">☕ 아기 낮잠 타임 — 어른 자유 쇼핑 & 깰 때 맞춰 분수쇼 관람</div></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">17:30<br>19:30</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">🚶 캐널시티 → 하치베이 식당 유모차 이동<br>🍢 야키토리노 하치베이 벳칸·별관 저녁</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=야키토리노+하치베이+후쿠오카" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+        <div class="sched-item highlight">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">팜 도미타 — 라벤더 밭 🌸</div>
+            <div class="sched-sub"><span class="transport t-taxi">택시</span>후라노역에서 약 15분 · 7월 만개 시즌 · 입장 무료</div>
           </div>
         </div>
-        <div class="tl-row">
-          <div class="tl-time">19:30<br>20:50</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">🛒 맥스밸류 하카타기온점 2차 장보기<br>🚖 마트 앞 → 미노시마 숙소 택시 복귀</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=맥스밸류+하카타기온점" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">La Vista Furano Hills 체크인 + 온천</div>
+            <div class="sched-sub">침대 가드 확인 · 모더레이트 퀸룸</div>
+          </div>
+        </div>
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">저녁 — 후라노 오믈렛 or 와인 레스토랑</div>
+          </div>
+        </div>
+      </div>
+      <div class="tip">🍽 조식 미포함 — 호텔 레스토랑 현장 추가(약 2,000~3,000엔/인) 또는 편의점 활용</div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day" onclick="toggleDay(this)">
+    <button class="day-toggle" type="button">
+      <div class="day-num">3</div>
+      <div class="day-info">
+        <div class="day-date">7월 7일 (화)</div>
+        <div class="day-title">후라노 → 삿포로 귀환</div>
+      </div>
+      <div class="day-hotel">JR Mets Premier · 조식 포함</div>
+      <div class="day-chevron">⌄</div>
+    </button>
+    <div class="day-body">
+      <div class="schedule">
+        <div class="sched-item highlight">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">오전 — 후라노 치즈공방 + 버터 만들기 체험</div>
+            <div class="sched-sub"><span class="transport t-taxi">택시</span>후라노역에서 약 10분 · 아기 동반 추천</div>
+          </div>
+        </div>
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">닝구르 테라스 산책</div>
+            <div class="sched-sub">숲속 공예 공방 거리 · 체크아웃 후 짐 맡기고</div>
+          </div>
+        </div>
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text"><span class="transport t-pass">에리어패스</span>후라노역 → 삿포로역 귀환</div>
+          </div>
+        </div>
+        <div class="sched-item highlight">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">저녁 — 홋카이도 징기스칸 🍖</div>
+            <div class="sched-sub">삿포로 대표 음식 · 스스키노 근처</div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- DAY 3 -->
-    <div class="day-card d3" id="card3">
-      <div class="day-header" onclick="toggle('card3')" aria-expanded="false">
-        <div class="day-dot">3</div>
-        <div class="day-info">
-          <div class="day-num">DAY 3</div>
-          <div class="day-title">거대 몰 탐방 & 원목 장난감</div>
-          <div class="day-date">6월 5일 금요일</div>
-        </div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  <!-- Day 4 -->
+  <div class="day" onclick="toggleDay(this)">
+    <button class="day-toggle" type="button">
+      <div class="day-num">4</div>
+      <div class="day-info">
+        <div class="day-date">7월 8일 (수)</div>
+        <div class="day-title">오타루 당일치기</div>
       </div>
-      <div class="day-body">
-        <div class="tl-row">
-          <div class="tl-time">09:20<br>09:50</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">🚖 숙소 → 라라포트 후쿠오카 (ららぽーと福岡) 이동</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=라라포트+후쿠오카" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+      <div class="day-hotel">JR Mets Premier · 조식 포함</div>
+      <div class="day-chevron">⌄</div>
+    </button>
+    <div class="day-body">
+      <div class="schedule">
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text"><span class="transport t-pass">에리어패스</span>삿포로역 → 오타루역</div>
+            <div class="sched-sub">약 35분 · 오전 일찍 출발 추천</div>
           </div>
         </div>
-        <div class="tl-row">
-          <div class="tl-time">10:00<br>12:30</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">🧸 후쿠오카 장난감 미술관 — 원목 실내 놀이터</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=후쿠오카+장난감+미술관" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+        <div class="sched-item highlight">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">오타루 운하 산책</div>
+            <div class="sched-sub">평지 코스 · 유모차 이동 편함</div>
           </div>
         </div>
-        <div class="tl-row">
-          <div class="tl-time">12:30<br>14:00</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">🍜 라라포트 3층 푸드코트 점심<br>이치란 라멘 / 텐진 타카오 선택</div></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">14:00<br>17:30</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">🤖 실물 크기 건담쇼 관람 및 라라포트 쇼핑<br>낮잠 병행 (유모차 활용)</div></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">17:30<br>19:30</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">🍲 하카타 명물 미즈타키 (닭백숙) 전문점 저녁</div></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">19:30<br>20:00</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">🚖 식당 → 미노시마 숙소 택시 복귀 및 짐 정리</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DAY 4 -->
-    <div class="day-card d4" id="card4">
-      <div class="day-header" onclick="toggle('card4')" aria-expanded="false">
-        <div class="day-dot">4</div>
-        <div class="day-info">
-          <div class="day-num">DAY 4</div>
-          <div class="day-title">안전한 귀국</div>
-          <div class="day-date">6월 6일 토요일</div>
-        </div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="day-body">
-        <div class="tl-row">
-          <div class="tl-time">08:00<br>09:10</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">🍳 숙소 아침 식사 및 체크아웃 준비</div></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">09:20<br>09:50</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content">
-            <div class="tl-text">🚖 숙소 → 후쿠오카 공항 (福岡空港) 택시 이동</div>
-            <a class="tl-link" href="https://maps.google.com/maps?q=후쿠오카+공항" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>지도 보기
-            </a>
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">사카이마치 거리 — 오르골 체험</div>
+            <div class="sched-sub">돌바닥 구간 일부 있음 · 유모차 주의</div>
           </div>
         </div>
-        <div class="tl-row">
-          <div class="tl-time">09:50<br>12:10</div>
-          <div class="tl-line-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
-          <div class="tl-content"><div class="tl-text">🛍️ 수하물 위탁, 공항 면세점 기념품 쇼핑<br>✈️ 12:10 비행기 탑승 · 귀국</div></div>
+        <div class="sched-item highlight">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">점심 — 카이센동 🦀</div>
+            <div class="sched-sub">신선 해산물 덮밥</div>
+          </div>
+        </div>
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text"><span class="transport t-pass">에리어패스</span>오후 삿포로 귀환 + 기념품 쇼핑</div>
+            <div class="sched-sub">삿포로역 JR타워 스텔라플레이스</div>
+          </div>
+        </div>
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">저녁 — 삿포로 스프카레</div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- ALTERNATIVES -->
-    <div class="section-label" style="margin-top:2rem">날씨 · 비상시 대체 명소</div>
-    <div class="alt-box">
-      <div class="alt-header">💡 대체 플랜</div>
-      <div class="alt-row">
-        <div>
-          <div class="alt-day">2일 차 대체</div>
-          <div class="alt-place">오호리 공원 (大濠公園)</div>
-          <div class="alt-desc">도심 속 평지 유모차 산책 코스</div>
+  <!-- Day 5 -->
+  <div class="day" onclick="toggleDay(this)">
+    <button class="day-toggle" type="button">
+      <div class="day-num">5</div>
+      <div class="day-info">
+        <div class="day-date">7월 9일 (목)</div>
+        <div class="day-title">귀국</div>
+      </div>
+      <div class="day-chevron">⌄</div>
+    </button>
+    <div class="day-body">
+      <div class="schedule">
+        <div class="sched-item">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text">오전 — 마지막 마트 / 편의점 쇼핑</div>
+            <div class="sched-sub">홋카이도 한정 과자 · 유제품 · 치즈</div>
+          </div>
         </div>
-        <a class="alt-link" href="https://maps.google.com/maps?q=오호리공원+후쿠오카" target="_blank">지도 보기 →</a>
-      </div>
-      <div class="alt-row">
-        <div>
-          <div class="alt-day">3일 차 대체</div>
-          <div class="alt-place">마린월드 우미노나카미치</div>
-          <div class="alt-desc">돌고래 쇼를 볼 수 있는 대형 수족관</div>
+        <div class="sched-item highlight">
+          <div class="sched-dot"></div>
+          <div class="sched-body">
+            <div class="sched-text"><span class="transport t-pasmo">파스모</span>삿포로역 → 신치토세공항 · JR 쾌속 에어포트</div>
+            <div class="sched-sub">16:20 출발 기준 → 14:00 이전 공항 도착 권장</div>
+          </div>
         </div>
-        <a class="alt-link" href="https://maps.google.com/maps?q=마린월드+우미노나카미치" target="_blank">지도 보기 →</a>
       </div>
     </div>
+  </div>
 
-    <!-- BUDGET -->
-    <div class="section-label">예산 요약 · 어른 3명 + 아기 3명</div>
-    <div class="budget-grid">
-      <div class="b-card">
-        <div class="b-icon">🚖</div>
-        <div class="b-label">교통비 (택시)</div>
-        <div class="b-amount">23,000–26,000엔</div>
-        <div class="b-detail">공항 왕복 및 시내 이동 전체<br>일반 택시 2대 분량 합산</div>
-      </div>
-      <div class="b-card">
-        <div class="b-icon">🎟️</div>
-        <div class="b-label">입장료</div>
-        <div class="b-amount">21,600엔</div>
-        <div class="b-detail">호빵맨 박물관 전체<br>+ 장난감 미술관 대인/소인 합산</div>
-      </div>
-      <div class="b-card">
-        <div class="b-icon">🍜</div>
-        <div class="b-label">식비 & 마트</div>
-        <div class="b-amount">75,000–85,000엔</div>
-        <div class="b-detail">점심 3회 + 저녁 3회<br>+ 마트 장보기 2~3회</div>
-      </div>
+  <!-- SUMMARY -->
+  <div class="section-label">확정 항목</div>
+  <div class="summary">
+    <div class="summary-header">예약 & 준비 현황</div>
+    <div class="summary-row">
+      <span class="s-label">항공</span>
+      <span class="s-val">KE765 / KE770<span class="s-badge">완료</span></span>
     </div>
-    <div class="total-bar">
-      <div>
-        <div class="total-label">3박 4일 총합 예산</div>
-        <div class="total-note">쇼핑비 제외 · 순수 현지 공통 경비</div>
-      </div>
-      <div style="text-align:right">
-        <div class="total-amount">약 120,000–132,000엔</div>
-        <div class="total-krw">한화 약 110만–120만 원</div>
-      </div>
+    <div class="summary-row">
+      <span class="s-label">삿포로 숙소 (3박)</span>
+      <span class="s-val">JR Mets Premier 디럭스 트윈 · 조식 포함<span class="s-badge">완료</span></span>
     </div>
-
-    <div class="footer" style="margin-top:2.5rem">
-      ✈️ 즐거운 후쿠오카 여행 되세요!
+    <div class="summary-row">
+      <span class="s-label">후라노 숙소 (1박)</span>
+      <span class="s-val">La Vista Furano Hills 퀸룸 · 40,500엔<span class="s-badge">완료</span></span>
     </div>
+    <div class="summary-row">
+      <span class="s-label">교통 패스</span>
+      <span class="s-val">삿포로-후라노 에리어 패스 4일권<span class="s-badge pending">구매 필요</span></span>
+    </div>
+    <div class="summary-row">
+      <span class="s-label">파스모</span>
+      <span class="s-val">공항 이동 + 시내<span class="s-badge pending">충전 필요</span></span>
+    </div>
+    <div class="summary-row">
+      <span class="s-label">침대 가드 요청</span>
+      <span class="s-val">JR Mets + La Vista 메일<span class="s-badge pending">발송 필요</span></span>
+    </div>
+  </div>
 
-  </div><!-- /container -->
+  <!-- TODO -->
+  <div class="todo">
+    <div class="todo-title">남은 To-do</div>
+    <div class="todo-item"><div class="todo-check"></div>삿포로-후라노 에리어 패스 4일권 구매 (클룩 / KKday)</div>
+    <div class="todo-item"><div class="todo-check"></div>JR Mets Premier — 침대 가드 요청 메일 발송</div>
+    <div class="todo-item"><div class="todo-check"></div>La Vista Furano Hills — 침대 가드 요청 메일 발송</div>
+    <div class="todo-item"><div class="todo-check"></div>시로이코이비토 파크 — 체험 프로그램 사전 예약</div>
+    <div class="todo-item"><div class="todo-check"></div>파스모 충전 (공항 도착 후)</div>
+  </div>
 
-  <script>
-    function toggle(id) {
-      const card = document.getElementById(id);
-      const isOpen = card.classList.toggle('open');
-      card.querySelector('.day-header').setAttribute('aria-expanded', isOpen);
-    }
-  </script>
+</div>
+
+<footer>삿포로 가족여행 2026 · 7.05 – 7.09</footer>
+
+<script>
+  function toggleDay(dayEl) {
+    const isOpen = dayEl.classList.contains('open');
+    dayEl.classList.toggle('open', !isOpen);
+    const num = dayEl.querySelector('.day-num');
+    num.classList.toggle('active', !isOpen);
+  }
+</script>
 </body>
 </html>
